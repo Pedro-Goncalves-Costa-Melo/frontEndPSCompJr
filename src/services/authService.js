@@ -1,7 +1,7 @@
 const AUTH_KEY = 'isAuthenticated';
 
 /**
- * Simula a verificação de credenciais e "loga" o usuário.
+ * Simula a verificação de credenciais e "loga" o usuário
  * @param {string} email
  * @param {string} password
  * @returns {boolean} 
@@ -28,4 +28,18 @@ export const logout = () => {
  */
 export const isAuthenticated = () => {
   return localStorage.getItem(AUTH_KEY) === 'true';
+};
+
+/**
+ * Simula o registro de um novo usuário
+ * @param {string} email
+ * @param {string} password
+ * @returns {boolean} 
+ */
+export const register = (email, password) => {
+  if (email && password) {
+    localStorage.setItem(AUTH_KEY, 'true'); 
+    return true;
+  }
+  return false;
 };
