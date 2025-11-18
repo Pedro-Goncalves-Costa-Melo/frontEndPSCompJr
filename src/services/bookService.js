@@ -69,3 +69,52 @@ export const getBooks = () => {
 export const saveBooks = (books) => {
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(books));
 };
+
+/**
+ * Função CREATE
+ * @param {Object} newBook
+ * @returns {Array}
+ */
+export const addBook = (newBook) => {
+  const books = getBooks();
+  
+  const bookWithId = { 
+    ...newBook, 
+    id: `local-${Date.now()}`, 
+    status: 'LOCAL' 
+  };
+  
+  const newBooks = [bookWithId, ...books];
+  saveBooks(newBooks);
+  return newBooks;
+};
+
+/**
+ * Função UPDATE 
+ * @param {Object} updatedBook 
+ * @returns {Array} 
+ */
+export const updateBook = (updatedBook) => {
+  const books = getBooks();
+  
+  const newBooks = books.map(book => 
+    book.id === updatedBook.id ? updatedBook : book
+  );
+  
+  saveBooks(newBooks);
+  return newBooks;
+};
+
+/**
+ * Função DELETE 
+ * @param {string} id 
+ * @returns {Array} 
+ */
+export const deleteBook = (id) => {
+  const books = getBooks();
+  
+  const newBooks = books.filter(book => book.id !== id);
+  
+  saveBooks(newBooks);
+  return newBooks;
+};

@@ -1,12 +1,13 @@
 // src/components/Input.jsx
 import React from 'react';
 
-const Input = ({ label, type, value, onChange, placeholder }) => {
+const Input = ({ label, type, value, onChange, placeholder, name }) => {
   return (
     <div style={{ marginBottom: '15px' }}>
       <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>{label}</label>
       <input
         type={type}
+        name={name}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
