@@ -43,54 +43,76 @@ const BookForm = ({ bookToEdit, onSuccess, onClose }) => {
   };
 
   return (
-    <div style={{ padding: '20px', border: '1px solid #ccc', borderRadius: '8px', maxWidth: '500px', margin: '20px auto', backgroundColor: '#f9f9f9' }}>
+    <div 
+      className="glass-effect" 
+      style={{ 
+        maxWidth: '500px', 
+        margin: '50px auto', 
+        padding: '20px' 
+      }} 
+    >
       <h3>{bookToEdit ? 'Editar Livro' : 'Adicionar Novo Livro'}</h3>
       <form onSubmit={handleSubmit}>
+        
+        {}
         <Input
-        label="Título"
-        type="text"
-        name="title" 
-        value={book.title}
-        onChange={handleChange}
+          label="Título"
+          type="text"
+          name="title" 
+          value={book.title}
+          onChange={handleChange}
         />
         <Input
-        label="Autor(es)"
-        type="text"
-        name="author"
-        value={book.author}
-        onChange={handleChange}
+          label="Autor(es)"
+          type="text"
+          name="author"
+          value={book.author}
+          onChange={handleChange}
         />
         <Input
-        label="Data de Publicação"
-        type="text"
-        name="publishedDate"
-        value={book.publishedDate}
-        onChange={handleChange}
+          label="Data de Publicação"
+          type="text"
+          name="publishedDate"
+          value={book.publishedDate}
+          onChange={handleChange}
         />
+        
+        {}
         <div style={{ marginBottom: '15px' }}>
-        <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Descrição</label>
-        <textarea
+          <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Descrição</label>
+          <textarea
             name="description"
             value={book.description}
             onChange={handleChange}
             rows="4"
-            style={{ padding: '10px', width: '100%', boxSizing: 'border-box', border: '1px solid #ccc', borderRadius: '4px' }}
-        ></textarea>
-        </div>  
+            style={{ 
+              padding: '10px', 
+              width: '100%', 
+              boxSizing: 'border-box', 
+              background: 'rgba(255, 255, 255, 0.1)', 
+              color: '#E0E0E0',
+              border: '1px solid #4CAF50',
+              borderRadius: '4px' 
+            }}
+          ></textarea>
+        </div> 
         
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p style={{ color: '#FF7043' }}>{error}</p>}
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+        {}
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px', gap: '10px' }}>
           <button 
             type="button" 
             onClick={onClose}
-            style={{ padding: '10px 15px', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+            className="btn-secondary"
+            style={{ flexGrow: 1 }}
           >
             Cancelar
           </button>
           <button 
             type="submit"
-            style={{ padding: '10px 15px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+            className="btn-primary"
+            style={{ flexGrow: 1 }}
           >
             {bookToEdit ? 'Salvar Edição' : 'Adicionar Livro'}
           </button>

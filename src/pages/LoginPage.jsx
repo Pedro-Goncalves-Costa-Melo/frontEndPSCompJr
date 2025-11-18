@@ -1,15 +1,15 @@
 // src/pages/LoginPage.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Input from '../components/Input';
-import RegisterForm from '../components/RegisterForm'; 
+import Input from '../components/Input.jsx';
+import RegisterForm from '../components/RegisterForm.jsx';
 import { login, isAuthenticated } from '../services/authService';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [isLoginView, setIsLoginView] = useState(true); 
+  const [isLoginView, setIsLoginView] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,6 +45,7 @@ const LoginPage = () => {
         <Input
           label="Email"
           type="email"
+          name="email" 
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="seu.email@exemplo.com"
@@ -52,17 +53,27 @@ const LoginPage = () => {
         <Input
           label="Senha"
           type="password"
+          name="password" 
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="********"
         />
-        {error && <p style={{ color: '#FF7043' }}>{error}</p>} {/* Erro em tom de atenção */}
-        <button type="submit" style={{ backgroundColor: '#4CAF50', color: '#121212', width: '100%' }}>
+        
+        {error && <p style={{ color: '#FF7043' }}>{error}</p>}
+        
+        {}
+        <button 
+          type="submit" 
+          className="btn-primary" 
+          style={{ width: '100%', marginTop: '10px' }} 
+        >
           Entrar
         </button>
       </form>
+      
       <p style={{ marginTop: '20px', textAlign: 'center' }}>
         Ainda não tem conta?{' '}
+        {}
         <a href="#" onClick={() => toggleForm('register')} style={{ color: '#4CAF50' }}>
           Clique aqui para Registrar
         </a>

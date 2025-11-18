@@ -73,13 +73,13 @@ const HomePage = () => {
                 <div className="button-group">
                     <button 
                         onClick={handleCreate}
-                        style={{ backgroundColor: '#4CAF50', color: '#121212' }}
+                        className="btn-primary"
                     >
                         + Adicionar Livro
                     </button>
                     <button 
                         onClick={handleLogout}
-                        style={{ backgroundColor: '#FF7043', color: 'white' }}
+                        className="btn-danger"
                     >
                         Sair
                     </button>
@@ -105,13 +105,13 @@ const HomePage = () => {
                         <div style={{ marginTop: '15px', display: 'flex', gap: '10px' }}>
                             <button 
                                 onClick={() => handleEdit(book)}
-                                style={{ backgroundColor: '#A5D6A7', color: '#121212', flexGrow: 1 }}
+                                className="btn-secondary"
                             >
                                 Editar
                             </button>
                             <button 
                                 onClick={() => handleDelete(book.id)}
-                                style={{ backgroundColor: '#FF7043', color: 'white', flexGrow: 1 }}
+                                className="btn-danger"
                             >
                                 Excluir
                             </button>

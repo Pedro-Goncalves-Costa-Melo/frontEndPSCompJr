@@ -34,6 +34,7 @@ const RegisterForm = ({ toggleForm }) => {
         <Input
           label="Email"
           type="email"
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="seu.email@exemplo.com"
@@ -41,6 +42,7 @@ const RegisterForm = ({ toggleForm }) => {
         <Input
           label="Senha"
           type="password"
+          name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Mínimo 6 caracteres"
@@ -48,12 +50,17 @@ const RegisterForm = ({ toggleForm }) => {
         <Input
           label="Confirmar Senha"
           type="password"
+          name="confirmPassword"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           placeholder="Repita a senha"
         />
         {error && <p style={{ color: '#FF7043' }}>{error}</p>}
-        <button type="submit" style={{ backgroundColor: '#4CAF50', color: '#121212', width: '100%', marginTop: '10px' }}>
+        <button 
+          type="submit" 
+          className="btn-primary" 
+          style={{ width: '100%', marginTop: '10px' }}
+        >
           Registrar
         </button>
       </form>
