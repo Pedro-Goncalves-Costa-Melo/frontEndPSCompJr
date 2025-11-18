@@ -39,7 +39,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
+    <div className="glass-effect" style={{ maxWidth: '400px', margin: '50px auto', padding: '20px' }}>
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <Input
@@ -56,14 +56,14 @@ const LoginPage = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="********"
         />
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit" style={{ padding: '10px 15px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', width: '100%' }}>
+        {error && <p style={{ color: '#FF7043' }}>{error}</p>} {/* Erro em tom de atenção */}
+        <button type="submit" style={{ backgroundColor: '#4CAF50', color: '#121212', width: '100%' }}>
           Entrar
         </button>
       </form>
       <p style={{ marginTop: '20px', textAlign: 'center' }}>
         Ainda não tem conta?{' '}
-        <a href="#" onClick={() => toggleForm('register')} style={{ color: '#28a745', cursor: 'pointer' }}>
+        <a href="#" onClick={() => toggleForm('register')} style={{ color: '#4CAF50' }}>
           Clique aqui para Registrar
         </a>
       </p>

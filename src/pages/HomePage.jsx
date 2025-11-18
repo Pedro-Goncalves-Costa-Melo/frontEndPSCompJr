@@ -73,13 +73,13 @@ const HomePage = () => {
                 <div className="button-group">
                     <button 
                         onClick={handleCreate}
-                        style={{ backgroundColor: '#28a745', color: 'white' }}
+                        style={{ backgroundColor: '#4CAF50', color: '#121212' }}
                     >
                         + Adicionar Livro
                     </button>
                     <button 
                         onClick={handleLogout}
-                        style={{ backgroundColor: '#dc3545', color: 'white' }}
+                        style={{ backgroundColor: '#FF7043', color: 'white' }}
                     >
                         Sair
                     </button>
@@ -90,7 +90,7 @@ const HomePage = () => {
                 {books.map(book => (
                     <div 
                         key={book.id} 
-                        className={`book-card ${book.status === 'LOCAL' ? 'local' : ''}`}
+                        className={`book-card glass-effect ${book.status === 'LOCAL' ? 'local' : ''}`}
                     >
                         <span className="book-status">
                             {book.status === 'LOCAL' ? 'Local' : 'API'}
@@ -105,13 +105,13 @@ const HomePage = () => {
                         <div style={{ marginTop: '15px', display: 'flex', gap: '10px' }}>
                             <button 
                                 onClick={() => handleEdit(book)}
-                                style={{ backgroundColor: '#ffc107', color: 'black', flexGrow: 1 }}
+                                style={{ backgroundColor: '#A5D6A7', color: '#121212', flexGrow: 1 }}
                             >
                                 Editar
                             </button>
                             <button 
                                 onClick={() => handleDelete(book.id)}
-                                style={{ backgroundColor: '#dc3545', color: 'white', flexGrow: 1 }}
+                                style={{ backgroundColor: '#FF7043', color: 'white', flexGrow: 1 }}
                             >
                                 Excluir
                             </button>

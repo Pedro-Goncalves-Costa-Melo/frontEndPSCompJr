@@ -28,7 +28,7 @@ const RegisterForm = ({ toggleForm }) => {
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
+    <div className="glass-effect" style={{ maxWidth: '400px', margin: '50px auto', padding: '20px' }}>
       <h2>Registro</h2>
       <form onSubmit={handleRegister}>
         <Input
@@ -52,14 +52,14 @@ const RegisterForm = ({ toggleForm }) => {
           onChange={(e) => setConfirmPassword(e.target.value)}
           placeholder="Repita a senha"
         />
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit" style={{ padding: '10px 15px', backgroundColor: '#28a745', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', width: '100%', marginTop: '10px' }}>
+        {error && <p style={{ color: '#FF7043' }}>{error}</p>}
+        <button type="submit" style={{ backgroundColor: '#4CAF50', color: '#121212', width: '100%', marginTop: '10px' }}>
           Registrar
         </button>
       </form>
       <p style={{ marginTop: '20px', textAlign: 'center' }}>
         Já tem conta?{' '}
-        <a href="#" onClick={() => toggleForm('login')} style={{ color: '#007bff', cursor: 'pointer' }}>
+        <a href="#" onClick={() => toggleForm('login')} style={{ color: '#4CAF50' }}>
           Clique aqui para Login
         </a>
       </p>
