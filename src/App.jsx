@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
-function App() {
-  const [count, setCount] = useState(0)
+import React from 'react';
+function App({ children }) {
 
   return (
     <div>
-      <h1>Biblioteca de Livros</h1>
+      {/*  */}
+      
+      <main>
+        {children} 
+        {/*  */}
+      </main>
+      
     </div>
   )
 }
