@@ -5,6 +5,7 @@ import BookForm from '../components/BookForm.jsx';
 import { initializeBooks, getBooks, deleteBook } from '../services/bookService'; 
 import { logout } from '../services/authService'; 
 import '../styles/HomePage.css';
+import BiblioOwl from '../assets/bibliO-Owl.png';
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
@@ -69,7 +70,14 @@ const HomePage = () => {
     return (
         <div className="container">
             <header className="header">
-                <h2>Minha Biblioteca ({books.length} Livros)</h2>
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', flexGrow: 1 }}>
+                    <img 
+                        src={BiblioOwl} 
+                        alt="Mascote Biblio-Owl" 
+                        style={{ width: '80px', height: 'auto', marginBottom: '10px' }} 
+                    />
+                    <h2>BibliO-Owl ({books.length} Livros)</h2>
+                </div>
                 <div className="button-group">
                     <button 
                         onClick={handleCreate}

@@ -24,32 +24,45 @@ a {
     cursor: pointer;
 }
 
+button {
+    font-size: 1em; 
+    padding: 8px 16px; 
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease; 
+}
+
 .btn-primary {
-    background-color: #4CAF50; 
+    background: linear-gradient(45deg, #4CAF50, #1E88E5);
     color: #121212;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
 }
 
 .btn-primary:hover {
-    background-color: #66BB6A; 
+    background: linear-gradient(45deg, #66BB6A, #42A5F5);
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.6);
 }
 
 .btn-danger {
-    background-color: #FF7043; 
+    background: linear-gradient(45deg, #FF7043, #E53935);
     color: white;
+    box-shadow: 0 4px 10px rgba(255, 112, 67, 0.4);
 }
 
 .btn-danger:hover {
-    background-color: #FF8A65;
-}
+    background: linear-gradient(45deg, #FF8A65, #FF5252);
+    box-shadow: 0 6px 15px rgba(255, 112, 67, 0.6);}
 
 .btn-secondary {
-    background-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: #E0E0E0;
-    border: 1px solid #E0E0E0;
+    border: 1px solid #4CAF50;
+    box-shadow: none;
 }
 
 .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .glass-effect {
