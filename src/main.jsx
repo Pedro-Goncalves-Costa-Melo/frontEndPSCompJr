@@ -6,6 +6,7 @@ import App from './App.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import HomePage from './pages/HomePage.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
+import './styles/GlobalStyles.css';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
